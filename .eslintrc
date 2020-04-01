@@ -1,0 +1,6 @@
+{
+  "extends": "ryuuki",
+  "rules": {
+    "no-console": 0
+  }
+}
