@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { login } from "@controllers/AuthController";
-import { User, Role } from "@models";
+import { Role, User } from "@models";
 
 const router = Router();
 
@@ -15,6 +15,13 @@ router.get("/users", async (req, res) => {
   } catch (err) {
     return res.json(err.message);
   }
+});
+
+router.get("/user", async (req, res) => {
+  const u = await User.findOne()
+    .then(r => r)
+    .catch(err => err);
+  res.json(u);
 });
 
 router.get("/roles", async (req, res) => {
